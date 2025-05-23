@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/artgrid-studio/static/css/main.810beee9.css",
+    "main.js": "/artgrid-studio/static/js/main.c7a485b6.js",
+    "index.html": "/artgrid-studio/index.html",
+    "main.810beee9.css.map": "/artgrid-studio/static/css/main.810beee9.css.map",
+    "main.c7a485b6.js.map": "/artgrid-studio/static/js/main.c7a485b6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.810beee9.css",
+    "static/js/main.c7a485b6.js"
+  ]
+}
