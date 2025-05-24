@@ -4,7 +4,7 @@
 
 Transform geometric patterns into stunning visual artwork with two specialized generators: Artistic Grid patterns and Maze-Style compositions. Built with React and inspired by algorithmic art principles.
 
-🌐 **Visit:** [scuffedepoch.com](https://www.scuffedepoch.com) | **Version:** 1.0.0
+🌐 **Visit:** [https://scuffedepoch.com/artgrid-studio]([https://www.scuffedepoch.com](https://scuffedepoch.com/artgrid-studio)) | **Version:** 1.8.8
 
 ---
 
@@ -44,7 +44,7 @@ Transform geometric patterns into stunning visual artwork with two specialized g
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/ARTGRID-STUDIO.git
+   git clone https://github.com/MushroomFleet/ARTGRID-STUDIO
    cd ARTGRID-STUDIO
    ```
 
