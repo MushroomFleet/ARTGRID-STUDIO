@@ -4,6 +4,8 @@
 import ArtisticGridGenerator from './artistic-grid/ArtisticGridGenerator.jsx';
 import MazeStyleGenerator from './maze-style/MazeStyleGenerator.jsx';
 import CircuitStyleGenerator from './circuit-style/CircuitStyleGenerator.jsx';
+import BalancedCircuitGenerator from './balanced-circuit/BalancedCircuitGenerator.jsx';
+import TripticCircuitGenerator from './triptic-circuit/TripticCircuitGenerator.jsx';
 
 // Generator registry with all available generators
 export const generators = {
@@ -44,6 +46,32 @@ export const generators = {
       '6 color schemes (Original, Blues, Earth, Pastel, Vibrant, Monochrome)',
       'Shadow and noise effects',
       'Seeded randomization for reproducible results'
+    ]
+  },
+  'balanced-circuit': {
+    name: 'Balanced Circuit',
+    slug: 'balanced-circuit',
+    component: BalancedCircuitGenerator,
+    description: 'Generate balanced circuit patterns with weighted color distribution',
+    features: [
+      'Weighted color distribution system',
+      'Color balance presets (Balanced, Red Focus, Blue Focus, Minimal)',
+      'Jagged circuit-like shape generation',
+      'Size-based shape distribution (large, medium, small)',
+      'Grid-based structured layout'
+    ]
+  },
+  'triptic-circuit': {
+    name: 'Triptych Circuit',
+    slug: 'triptic-circuit',
+    component: TripticCircuitGenerator,
+    description: 'Generate triptych-style circuit patterns with three distinct visual styles',
+    features: [
+      'Three distinct panel styles (Hatched, Jagged, Block)',
+      'Triptych and individual panel modes',
+      'Advanced pattern filling (hatching, cross-hatching)',
+      'Circuit-like connector paths',
+      'Detailed small elements and decorations'
     ]
   }
 };
