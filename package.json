@@ -2,8 +2,10 @@
   "name": "artgrid-studio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "/artgrid-studio",
+  "homepage": "./",
+  "main": "build/electron.js",
   "dependencies": {
+    "d3": "^7.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
@@ -11,9 +13,18 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build:electron",
+    "build:web": "react-scripts build",
+    "build:electron": "react-scripts build && npm run copy-electron",
+    "build:all": "npm run build:web && npm run copy-to-build-web && npm run build:electron",
+    "copy-electron": "copy public\\electron.js build\\ && copy public\\preload.js build\\",
+    "copy-to-build-web": "if exist build-web rmdir /s /q build-web && mkdir build-web && xcopy build\\*.* build-web\\ /s /e && del build-web\\electron.js && del build-web\\preload.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "npm run build:electron && electron-builder",
+    "dist": "npm run build:electron && electron-builder --publish=never",
+    "deploy:web": "npm run build:web && npm run copy-to-build-web"
   },
   "eslintConfig": {
     "extends": [
@@ -35,7 +46,32 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
+    "electron": "^22.0.0",
+    "electron-builder": "^24.0.0",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "wait-on": "^7.0.1"
+  },
+  "build": {
+    "appId": "com.artgrid.studio",
+    "productName": "ArtGrid Studio",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
   }
 }

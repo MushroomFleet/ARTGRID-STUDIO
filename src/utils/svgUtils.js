@@ -264,19 +264,41 @@ export const getSVGData = (svg) => {
  * @param {SVGElement} svg - SVG element to download
  * @param {string} filename - Filename for download
  */
-export const downloadSVG = (svg, filename = 'artwork.svg') => {
+export const downloadSVG = async (svg, filename = 'artwork.svg') => {
   const svgData = getSVGData(svg);
-  const blob = new Blob([svgData], { type: 'image/svg+xml' });
-  const url = URL.createObjectURL(blob);
   
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  
-  URL.revokeObjectURL(url);
+  // Check if running in Electron
+  if (window.isElectron && window.electronAPI) {
+    try {
+      const result = await window.electronAPI.saveSVG(svgData, filename);
+      if (result.success && !result.canceled) {
+        // Optionally show success message
+        console.log('SVG saved successfully to:', result.filePath);
+      } else if (result.error) {
+        console.error('Error saving SVG:', result.error);
+        await window.electronAPI.showError('Save Error', `Failed to save SVG: ${result.error}`);
+      }
+      return result;
+    } catch (error) {
+      console.error('Error saving SVG:', error);
+      await window.electronAPI.showError('Save Error', `Failed to save SVG: ${error.message}`);
+      return { success: false, error: error.message };
+    }
+  } else {
+    // Fallback to browser download
+    const blob = new Blob([svgData], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    URL.revokeObjectURL(url);
+    return { success: true };
+  }
 };
 
 /**

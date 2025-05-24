@@ -3,6 +3,7 @@
 
 import ArtisticGridGenerator from './artistic-grid/ArtisticGridGenerator.jsx';
 import MazeStyleGenerator from './maze-style/MazeStyleGenerator.jsx';
+import CircuitStyleGenerator from './circuit-style/CircuitStyleGenerator.jsx';
 
 // Generator registry with all available generators
 export const generators = {
@@ -30,6 +31,19 @@ export const generators = {
       'Turbulence filter effects',
       'Cluster-based distribution',
       'Multiple color schemes'
+    ]
+  },
+  'circuit-style': {
+    name: 'Circuit-Style Patterns',
+    slug: 'circuit-style',
+    component: CircuitStyleGenerator,
+    description: 'Generate circuit board-inspired geometric patterns with 25 different shapes',
+    features: [
+      '25 different pattern types',
+      'Grid-based structured layout',
+      '6 color schemes (Original, Blues, Earth, Pastel, Vibrant, Monochrome)',
+      'Shadow and noise effects',
+      'Seeded randomization for reproducible results'
     ]
   }
 };
