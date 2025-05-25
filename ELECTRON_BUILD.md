@@ -2,8 +2,8 @@
 
 ## Build Completed Successfully ✅
 
-**File:** `dist/ArtGrid Studio 1.0.0.exe`
-**Size:** 76.6 MB
+**File:** `dist/ArtGrid Studio 2.1.0.exe`
+**Size:** ~78 MB (estimated)
 **Type:** Portable executable (no installation required)
 
 ## Features
@@ -12,14 +12,20 @@
 - **Native File Save Dialog**: Uses Windows native save dialog for SVG exports
 - **Identical UI**: Same interface as the web version
 - **Modular Generator System**: Maintains the extensible architecture for adding new generators
-- **Two Built-in Generators**:
+- **Eight Built-in Generators**:
   - Artistic Grid Generator (based on original Python script)
-  - Maze-Style Generator
+  - Art Grid V2 (advanced multi-grid system with 25+ patterns)
+  - Maze-Style Generator (path-based maze patterns)
+  - Circuit-Style Patterns (25 circuit board shapes)
+  - Circuit V2 (advanced circuit generator with 35+ patterns) ✨ **Restored**
+  - Balanced Circuit (weighted color distribution)
+  - Triptych Circuit (three-panel circuit styles)
+  - SVG Tile Importer (import & arrange SVG files) ✨ **New**
 
 ## Usage Instructions
 
 1. **Run the Application**
-   - Double-click `ArtGrid Studio 1.0.0.exe`
+   - Double-click `ArtGrid Studio 2.1.0.exe`
    - No installation required
    - Windows may show a security warning (click "More info" → "Run anyway")
 
@@ -58,10 +64,10 @@
 
 ### File Structure in Executable
 ```
-ArtGrid Studio 1.0.0.exe
+ArtGrid Studio 2.1.0.exe
 ├── Electron runtime
 ├── React build (HTML, CSS, JS)
-├── Generator modules
+├── Generator modules (8 total)
 ├── Color palettes
 └── All dependencies bundled
 ```
@@ -106,7 +112,7 @@ The generator system remains modular. To add new generators in future versions:
 
 ---
 
-**Build Date:** May 23, 2025
-**Version:** 1.0.0
+**Build Date:** May 25, 2025
+**Version:** 2.1.0
 **Platform:** Windows x64
 **Build Type:** Portable Executable
