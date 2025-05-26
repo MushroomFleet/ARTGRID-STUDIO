@@ -10,6 +10,7 @@ import BalancedCircuitGenerator from './balanced-circuit/BalancedCircuitGenerato
 import TripticCircuitGenerator from './triptic-circuit/TripticCircuitGenerator.jsx';
 import TileImportGenerator from './tile-import/TileImportGenerator.jsx';
 import StampDecoratorGenerator from './stamp-decorator/StampDecoratorGenerator.jsx';
+import TopoContourGenerator from './topo-contour/TopoContourGenerator.jsx';
 
 // Generator registry with all available generators
 export const generators = {
@@ -141,6 +142,21 @@ export const generators = {
       'Drop shadows for depth',
       'Seeded randomization for reproducible results',
       'Customizable grid size and stamp density'
+    ]
+  },
+  'topo-contour': {
+    name: 'Topo-Contour',
+    slug: 'topo-contour',
+    component: TopoContourGenerator,
+    description: 'Generate topographical contour maps with realistic terrain and elevation lines for natural composition structures',
+    features: [
+      '5 terrain types (hills, mountains, valleys, ridges, craters)',
+      'Perlin noise terrain generation with octaves and persistence',
+      'Major and minor contour lines with customizable intervals',
+      'Elevation labels and ridge point visualization',
+      'Advanced smoothing and visual styling controls',
+      'Seeded randomization for reproducible terrains',
+      'SVG export with professional cartographic styling'
     ]
   }
 };
