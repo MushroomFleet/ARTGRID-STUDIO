@@ -9,6 +9,7 @@ import CircuitV2Generator from './circuit-v2/CircuitV2Generator.jsx';
 import BalancedCircuitGenerator from './balanced-circuit/BalancedCircuitGenerator.jsx';
 import TripticCircuitGenerator from './triptic-circuit/TripticCircuitGenerator.jsx';
 import TileImportGenerator from './tile-import/TileImportGenerator.jsx';
+import StampDecoratorGenerator from './stamp-decorator/StampDecoratorGenerator.jsx';
 
 // Generator registry with all available generators
 export const generators = {
@@ -124,6 +125,22 @@ export const generators = {
       'Random size variation and intelligent mixing',
       'High-quality SVG and PNG export',
       'Grid sizes from 2x2 to 8x8 with customizable spacing'
+    ]
+  },
+  'stamp-decorator': {
+    name: 'Stamp Decorator',
+    slug: 'stamp-decorator',
+    component: StampDecoratorGenerator,
+    description: 'Generate decorative stamp patterns with scalloped edges and recursive subdivisions',
+    features: [
+      'Decorative scalloped stamp edges',
+      'Recursive subdivision patterns',
+      'Corner arc decorations',
+      '6 color schemes (Original, Warm, Cool, Monochrome, Pastel, Vibrant)',
+      'Paper texture effects with noise overlay',
+      'Drop shadows for depth',
+      'Seeded randomization for reproducible results',
+      'Customizable grid size and stamp density'
     ]
   }
 };
